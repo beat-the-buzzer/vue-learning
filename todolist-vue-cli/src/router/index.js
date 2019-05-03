@@ -7,7 +7,7 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
-      path: '/todolist',
+      path: '/',
       name: 'todolist',
       component: TodoList
     }
