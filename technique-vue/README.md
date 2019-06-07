@@ -31,7 +31,7 @@
 
     :class="['class1 class2 class3', selected === index ? 'selected' : '']"
 
-  或者，同时使用class和:class(强烈推荐)
+  或者，同时使用class和:class`(强烈推荐)`
 
     class="class1 class2"
     :class="selected === 1 ? 'selected' : ''"
@@ -40,3 +40,12 @@
 
 每次使用v-for的时候，编辑器都会提示我们应该添加一个独一无二的key，我们也经常使用index作为key，不过这并不是一个最好的选择。
 
+把demo运行起来，打开控制台的调试模式，找到对应的元素，我们会发现，每次点击添加元素的时候，index作为key的例子，每个li都重新渲染了：
+
+![https://raw.githubusercontent.com/beat-the-buzzer/pictures/master/vue/vue-01.jpg](https://raw.githubusercontent.com/beat-the-buzzer/pictures/master/vue/vue-01.jpg)
+
+而独一无二的key的例子中，只改变了第一个li：
+
+![https://raw.githubusercontent.com/beat-the-buzzer/pictures/master/vue/vue-02.jpg](https://raw.githubusercontent.com/beat-the-buzzer/pictures/master/vue/vue-02.jpg)
+
+Vue中的key和React中的作用类似，都是用来计算差异的。如果key值改变，那么在渲染DOM的时候，会先销毁，再新建。如果key不变，那么只会更新文本。如果我们使用index作为key，如果在首位新增一个元素，那么列表中每一个元素的key都变了，这样的话，浏览器把每个节点都更新了，显然这是不合理的。

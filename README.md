@@ -8,5 +8,5 @@
 
 [4、todolist-vue-cli: 使用vue-cli实现todolist](https://github.com/beat-the-buzzer/vue-learning/tree/master/todolist-vue-cli)
 
-[5、technique-vue: vue开发技巧]()
+[5、technique-vue: vue开发技巧](https://github.com/beat-the-buzzer/vue-learning/tree/master/technique-vue)
 

@@ -2,15 +2,19 @@
   <div class="Index">
     <h1>{{msg}}</h1>
     <edit-class/>
+    <unique-key/>
   </div>
 </template>
 
 <script>
 import EditClass from '../../components/EditClass/EditClass';
+import UniqueKey from '../../components/UniqueKey/UniqueKey';
+
 export default {
   name: 'Index',
   components: {
-    'edit-class': EditClass
+    'edit-class': EditClass,
+    'unique-key': UniqueKey
   },
   data () {
     return {
