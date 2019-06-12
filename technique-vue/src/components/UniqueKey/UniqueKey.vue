@@ -1,7 +1,7 @@
 <template>
   <div class="UniqueKey">
-    <h3>唯一的key</h3>
-    <h4>index作为key的情况：</h4>
+    <h3>2、唯一的key</h3>
+    <h5>index作为key的情况：</h5>
     <button @click="addList1">点击添加数组</button>
     <ul>
       <li 
@@ -12,7 +12,7 @@
       </li>
     </ul> 
 
-    <h4>唯一key的情况：</h4>
+    <h5>唯一key的情况：</h5>
     <button @click="addList2">点击添加数组</button>
     <ul>
       <li 

@@ -49,3 +49,40 @@
 ![https://raw.githubusercontent.com/beat-the-buzzer/pictures/master/vue/vue-02.jpg](https://raw.githubusercontent.com/beat-the-buzzer/pictures/master/vue/vue-02.jpg)
 
 Vue中的key和React中的作用类似，都是用来计算差异的。如果key值改变，那么在渲染DOM的时候，会先销毁，再新建。如果key不变，那么只会更新文本。如果我们使用index作为key，如果在首位新增一个元素，那么列表中每一个元素的key都变了，这样的话，浏览器把每个节点都更新了，显然这是不合理的。
+
+### 数据改变但是没有重新渲染
+
+我们经常会遇到这样的问题：明明改变了数据，但是DOM没有更新。其实原因很简单，就是页面中使用的数据没有被监听，因此，我们虽然改变了数据，但是没有触发render方法。
+
+在例子中，我们定义了对象obj，它有一个属性id，然后在DOM层，我们使用了obj.id和obj.text。
+
+点击第一个按钮给obj.text赋值，我们弹出了这个值，但是这个值没有在DOM中渲染；
+
+点击第二个按钮，改变obj.id的值，发现除了obj.id之外，之前添加的obj.text也渲染了，我猜测是Vue底层计算虚拟DOM和真实DOM的差异，渲染了obj.text；
+
+其实很好理解，就是改变obj.id的时候触发了render，改变obj.text的时候没有触发render；
+
+为了解决偶尔出现的DOM不刷新问题，这里有三个解决方案：
+
+1、如果有属性在DOM上展示，一开始的时候就去定义：
+
+    obj: {
+      id: '',
+      text: ''
+    }
+
+2、如果我们在对象上追加一个属性，可以去改变整个对象，而不是改变某一个值，这种做法我是模仿了react redux的写法：
+
+    solution1() {
+      this.obj = {
+        ...this.obj,
+        text: '测试属性'
+      }
+    }
+
+3、使用Vue提供的$set方法，用了这个方法之后，就相当于在data里面定义了这个属性，从此该属性改变的时候，也会触发DOM刷新了：
+
+    solution2() {
+      this.$set(this.obj, 'text', '添加监听');
+      alert('点击第一个按钮看看刷不刷新');
+    }

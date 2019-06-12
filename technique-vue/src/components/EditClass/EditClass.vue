@@ -1,6 +1,6 @@
 <template>
   <div class="EditClass">
-    <h3>点击添加删除class:</h3>
+    <h3>1、点击添加删除class:</h3>
     <ul>
       <li 
         v-for="(item,index) in tabArr" 

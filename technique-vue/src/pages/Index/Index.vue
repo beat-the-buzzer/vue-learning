@@ -1,20 +1,23 @@
 <template>
   <div class="Index">
     <h1>{{msg}}</h1>
-    <edit-class/>
-    <unique-key/>
+    <edit-class />
+    <unique-key />
+    <unrefreshed />
   </div>
 </template>
 
 <script>
 import EditClass from '../../components/EditClass/EditClass';
 import UniqueKey from '../../components/UniqueKey/UniqueKey';
+import Unrefresh from '../../components/Unrefreshed/Unrefreshed';
 
 export default {
   name: 'Index',
   components: {
     'edit-class': EditClass,
-    'unique-key': UniqueKey
+    'unique-key': UniqueKey,
+    'unrefreshed': Unrefresh
   },
   data () {
     return {
