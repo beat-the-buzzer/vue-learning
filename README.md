@@ -10,3 +10,4 @@
 
 [5、technique-vue: vue开发技巧](https://github.com/beat-the-buzzer/vue-learning/tree/master/technique-vue)
 
+[6、vuex-vue: 使用Vuex进行状态管理](https://github.com/beat-the-buzzer/vue-learning/tree/master/vuex-vue)
