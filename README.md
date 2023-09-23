@@ -15,3 +15,5 @@
 [7、components-interact-vue: vue组件间交互传值](https://github.com/beat-the-buzzer/vue-learning/tree/master/components-interact-vue)
 
 [8、Vue3.0初学: vue3.0](https://github.com/beat-the-buzzer/vue-learning/tree/master/vue3.0-todolist)
+
+[9、vben-admin](https://github.com/beat-the-buzzer/vue-learning/tree/master/vben-admin-thin-next)
