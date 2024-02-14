@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>History Router</title>
+</head>
+<body>
+    <ul>
+        <li><a href="/home">首页</a></li>
+        <li><a href="/about">关于</a></li>
+    </ul>
+    <div id="routerView"></div>
+    <script>
+        let routerView = document.querySelector('#routerView')
+        window.addEventListener('DOMContentLoaded', onLoad)
+        window.addEventListener('popstate', function() {
+            routerView.innerHTML = location.pathname
+        })
+
+        function onLoad() {
+            routerView.innerHTML = location.pathname
+            let ul = document.querySelector('ul')
+            ul.addEventListener('click', function(e) {
+                e.preventDefault()
+                if(e.target.tagName == 'A') {
+                    let href = e.target.getAttribute('href')
+                    console.log(href)
+                    history.pushState(null, '', href) // 需要启动服务才能生效
+                    routerView.innerHTML = location.pathname
+                }
+            })
+        }
+    </script>
+</body>
+</html>
