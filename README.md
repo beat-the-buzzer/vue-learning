@@ -18,5 +18,7 @@
 
 [9、vben-admin](https://github.com/beat-the-buzzer/vue-learning/tree/master/vben-admin-thin-next)
 
-[10、vue-router](https://github.com/beat-the-buzzer/vue-learning/tree/master/vue-router-test)
+[10、vue-router2](https://github.com/beat-the-buzzer/vue-learning/tree/master/vue2-router-test)
+
+[11、vue-router3](https://github.com/beat-the-buzzer/vue-learning/tree/master/vue-router-test)
 
